@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div th:fragment="meus_dados">
+
+            <div class="container-fluid">
+
+                <div class="panel panel-default">
+                    <div class="panel-body painel-descricao">
+                        Menu meus dados
+                    </div>
+
+                    <div class="row">
+                        <div style="padding: 3%" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <h3>Dados Pessoais</h3>
+                            <div class="">
+                                <p th:text="${'Nome: ' + cliente.nomeCompletoCliente}"></p>
+                            </div>
+
+                            <div class="">
+                                <p th:text="${'Email: ' + cliente.emailCliente}"></p>
+                            </div>
+
+                            <div class="">
+                                <p th:text="${'CPF: ' + cliente.cpfCliente}"></p>
+                            </div>
+
+                            <div class="">
+                                <p th:text="${'Nascimento: ' + cliente.nascCliente}"></p>
+                            </div>
+
+                            <div class="">
+                                <p th:text="${'Sexo: ' + cliente.sexoCliente}"></p>
+                            </div>
+
+                            <div class="">
+                                <p th:text="${'Apelido: ' + cliente.apelidoCliente}"></p>
+                            </div>
+
+                            <div class="">
+                                <a class="btn btn-primary" th:href="@{/editDados}">Editar Dados</a>
+                            </div>
+                        </div>
+
+                        <div style="padding: 3%" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <h3>Endereços</h3>
+
+                            <div th:each="e:${enderecos}">
+
+                                <div class="">
+                                    <p th:text="${'Cep: ' + e.cepEndereco}"></p>
+                                </div>
+
+                                <div class="">
+                                    <p th:text="${'Logradouro: ' + e.logradouroEndereco}"></p>
+                                </div>
+
+                                <div class="">
+                                    <p th:text="${'Número: ' + e.numeroEndereco}"></p>
+                                </div>
+
+                                <div th:if="${e.complementoEndereco != null}" class="">
+                                    <p th:text="${'Complemento: ' + e.complementoEndereco}"></p>
+                                </div>
+
+                                <div class="">
+                                    <p th:text="${'Bairro: ' + e.bairroEndereco}"></p>
+                                </div>
+
+                                <div class="">
+                                    <p th:text="${'Cidade: ' + e.cidadeEndereco}"></p>
+                                </div>
+
+                                <div class="">
+                                    <p th:text="${'Estado: ' + e.estadoEndereco}"></p>
+                                </div>
+
+                                <a class="btn btn-primary" th:href="@{/editDadosEndereco}">Editar Endereço</a>
+
+                            </div>
+
+                        </div>
+
+                        <div style="padding: 3%" class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                            <h3>Telefones</h3>
+
+                            <div th:each="t:${telefones}" class="">
+
+                                <div class="">
+                                    <p th:text="${'Telefone Residencial: ' + t.dddTelefone + ' ' + t.numeroTelefone}"></p>
+                                </div>
+
+                                <div class="">
+                                    <p th:text="${'Telefone Celular: ' + t.dddCelular + ' ' + t.numeroCelular}"></p>
+                                </div>
+
+                                <a class="btn btn-primary" th:href="@{/editDadosTelefone}">Editar Telefones</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>

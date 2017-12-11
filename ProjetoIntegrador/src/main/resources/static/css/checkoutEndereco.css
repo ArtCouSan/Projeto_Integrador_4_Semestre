@@ -1,0 +1,53 @@
+.h1Selecione {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.linhaSelecione {
+    margin-top: 5%;
+}
+
+.colSelecione {
+    background-color: hsl(0, 0%, 91%);
+}
+
+.linhaTela {
+    border-top: 1px solid hsl(0, 0%, 91%);
+}
+
+.cardEndereco {
+    margin-top: 10%;
+    text-align: center;
+}
+
+.pPessoa {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.pEndereco {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+.entregarAqui {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+form {
+    width: 100%;
+}
+
+@media (max-width: 760px) {
+    .colSelecione {
+        text-align: center;
+    } 
+    
+    .entregarAqui {
+        font-size: 150%;
+    }
+}

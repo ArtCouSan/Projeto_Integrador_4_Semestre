@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html layout:decorate="~{backoffice/geral/sidemenu}">
+    <head>
+        <title>Produtos</title>
+        <meta charset="UTF-8">
+        <link th:href="@{/css/estiloBackofficeProduto.css}" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" th:src="@{/js/jQueryBackofficeListaDeProdutos.js}"></script>
+    </head>
+    <body>
+        <section layout:fragment="conteudo" class="container-fluid">
+
+            <div class="alert alert-success" th:if="${msgSucesso != null}">
+                <h2 th:text="${msgSucesso}"></h2>
+            </div>
+
+            <div class="row">
+                <div id="campo-busca" class="col-md-6">
+                    <h2 class="text-center"><strong>Produtos</strong></h2>
+                    <a th:href="@{/gerenciamento/produto}" id="botao-novo" class="btn btn-primary" type="button" name="novo">Novo Produto</a>
+                    <div id="custom-search-input">
+                        <div class="input-group col-md-12">
+                            <form class="input-group formPesquisa" action="#" th:action="@{/backoffice/produto/BackOfficePesquisa}" method="post">
+                                <input type="text" class="form-control" name="pesquisa" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">GO</button>
+                                </span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row grade-produtos">
+                <div th:if="${vazio} == false">
+                <table class="col-xs-12 col-sm-12 col-md-8 col-lg-8 table table-hover produtos">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Título</th>
+                            <th>Modelo</th>
+                            <th>Adicionado Em</th>
+                            <th>Add Imagem</th>
+                            <th>Detalhe</th>
+                            <th>Editar</th>
+                            <th>Remover</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p:${prod}">
+                            <td th:text="${p.codigoProduto}"></td>
+                            <td th:text="${p.tituloProduto}"></td>
+                            <td th:text="${p.modeloProduto}"></td>
+                            <td th:text="${#calendars.format(p.dtCadastroProduto,'dd/MM/yyyy HH:mm:ss')}"></td>
+                            <td><form class="" th:action="@{/upload}" method="get">
+                                    <input type="hidden" name="codigo" th:value="${p.codigoProduto}">
+                                    <button class="btn btn-success" type="submit">Adicionar Imagem</button>
+                                </form></td>
+
+                            <td><a class="btn btn-default" th:href="@{/backoffice/produto/{id} (id=${p.codigoProduto})}">Detalhes</a></td>
+
+                            <td><form class="" th:object="${p}" th:action="@{/gerenciamento/produto/{id} (id=${p.codigoProduto})}" method="post">
+                                    <button class="btn btn-primary" type="submit" name="button">Editar</button>
+                                </form></td>
+
+                            <td><form class="" id="remove-form" th:action="@{/gerenciamento/produto/{id}/remover (id=${p.codigoProduto})}" method="post">
+                                    <button class="btn btn-danger" type="button" name="button" data-toggle="modal" data-target="#confirm-submit">Remover</button>
+                                </form></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div th:if="${vazio} == true">
+                    <h1>Nenhum Produto Encontrado!</h1>
+                </div>
+            </div>
+
+     
+            <div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Confirmar Exclusão</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Deseja realmente excluir esse produto?</p>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                            <a href="#" id="submit" class="btn btn-danger success">Excluir</a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </body>
+</html>

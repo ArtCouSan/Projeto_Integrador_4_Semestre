@@ -1,0 +1,66 @@
+.cards{
+    height: 500px;
+    margin-top: 5%;
+    padding-top: 10%;
+}
+
+.indicadores{
+    background: #000;
+}
+
+.descricao{
+    border: #000 solid 2px;
+}
+
+.menu_indicadores{
+    bottom: 25%;
+    position: absolute ;
+}
+
+.card_desc{
+    margin-top: 10%;
+}
+
+.card_classificacao{
+    display: inline-block;
+}
+
+.preco{
+    bottom: 5%;
+    right: 5%;
+    position: absolute;
+}  
+
+@media screen and (min-width: 768px) {
+
+    .preco{
+        bottom: 5%;
+        right: 5%;
+        position: absolute;
+    }  
+
+}
+
+.icone_descricao{
+    position: absolute;
+    float: right;
+    right: 2%;
+    z-index: 2;
+    font-size: 180%;
+    color: #151515;
+}
+
+.icone_carrinho{
+    font-size: 50%;
+
+}
+
+.cores{
+    margin-top: 5%;
+    width: 20px;  
+    border-radius: 50%;
+    display: inline-block;
+    height: 20px;
+}
+
+

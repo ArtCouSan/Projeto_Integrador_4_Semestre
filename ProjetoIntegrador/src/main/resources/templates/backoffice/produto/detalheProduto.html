@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html layout:decorate="~{backoffice/geral/sidemenu}">
+    <head>
+        <title>Detalhe Produto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/css/estiloBackofficeDetalheProduto.css}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <section layout:fragment="conteudo" class="container-fluid">
+            <div class="row">
+                <div id="detalhe" class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+
+                    <div class="titulo">
+                        <h1 class="text-center" th:text="${produto.tituloProduto}">Título Produto</h1>
+                    </div>
+
+                    <div th:each="img : ${imagens}" class="imagens">
+                        <img th:src="@{'/images/' + ${img.nomeImagem}}" class="img-responsive">
+                    </div>
+
+                    <div class="">
+                        <h4>Código: <span th:text="${produto.codigoProduto}"></span></h4>
+                    </div>
+
+                    <div class="">
+                        <h4>Modelo: <span th:text="${produto.modeloProduto}"></span></h4>
+                    </div>
+
+                    <div class="">
+                        <h4>Preço: <span th:text="${produto.precoProduto}"></span></h4>
+                    </div>
+
+                    <div class="">
+                        <h4>Quantidade em Estoque: <span th:text="${produto.quantEstoqueProduto}"></span></h4>
+                    </div>
+
+                    <div class="">
+                        <h4>Cor da Armação: <span th:text="${produto.corProduto}"></span></h4>
+                    </div>
+
+                    <div class="">
+                        <h4>Cor da Lente: <span th:text="${produto.lenteCorProduto}"></span></h4>
+                    </div>
+
+                    <div class="">
+                        <h4>Descrição: <span th:text="${produto.descricaoProduto}"></span></h4>
+                    </div>
+
+                    <div class="">
+                        <h4>Tipo da Lente: <span th:text="${produto.lenteTipoProduto}"></span></h4>
+                    </div>
+
+                    <div class="">
+                        <h4>Data de Cadastro: <span th:text="${#calendars.format(produto.dtCadastroProduto, 'dd/MM/yyyy HH:mm:ss')}"></span></h4>
+                    </div>
+
+                    <div class="medidas">
+                        <h3>Medidas</h3>
+
+                        <h4>Altura: <span th:text="${produto.alturaProduto}"></span></h4>
+
+                        <h4>Largura: <span th:text="${produto.larguraProduto}"></span></h4>
+
+                        <h4>Comprimento: <span th:text="${produto.comprimentoProduto}"></span></h4>
+
+                        <h4>Peso: <span th:text="${produto.pesoProduto}"></span></h4>
+                    </div>
+
+                    <div class="marca">
+                        <h4>Marca: <span th:text="${marca.tituloMarca}"></span></h4>
+                    </div>
+
+                    <div class="categorias">
+                        <h3>Categorias</h3>
+                        <div class="" th:each="c : ${categorias}">
+                            <p th:text="${c.nomeCategoria}"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

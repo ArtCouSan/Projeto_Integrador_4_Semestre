@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <section th:fragment="formulario">
+
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+
+                    <form method="post" th:action="@{/novoCliente/endereco}" th:object="${endereco}" novalidate>
+
+                        <input type="hidden" th:field="*{codigoEndereco}"/>
+
+                        <div class="form-group">
+                            <label for="cep">CEP</label>
+                            <div class="input-group input_">
+                                <span class="input-group-addon" id="sizing-addon2"><span class="fa fa-map-marker"></span></span>
+                                <input th:field="*{cepEndereco}" onkeypress="mascara(this, '#####-###')" maxlength="9" id="cep" class="form-control" aria-describedby="sizing-addon2" type="text" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="logradouro">* Logradouro</label>
+                            <div class="input-group input_" th:classappend="${#fields.hasErrors('logradouroEndereco')} ? has-error">
+                                <span class="input-group-addon" id="sizing-addon2"><span class="fa fa-map-marker"></span></span>
+                                <input autocomplete="off" id="logradouro" class="form-control" th:field="*{logradouroEndereco}" aria-describedby="sizing-addon2" type="text" required/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numero">* Número</label>
+                            <div class="input-group input_" data-th-classappend="${#fields.hasErrors('numeroEndereco')} ? has-error">
+                                <span class="input-group-addon" id="sizing-addon2"><span class="fa fa-map-marker"></span></span>
+                                <input autocomplete="off" id="numero"  class="form-control" data-th-field="*{numeroEndereco}"  aria-describedby="sizing-addon2"  type="text" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="complemento">Complemento</label>
+                            <div class="input-group input_" data-th-classappend="${#fields.hasErrors('complementoEndereco')} ? has-error">
+                                <span class="input-group-addon" id="sizing-addon2"><span class="fa fa-map-marker"></span></span>
+                                <input autocomplete="off" id="complemento"  class="form-control" data-th-field="*{complementoEndereco}"  aria-describedby="sizing-addon2"  type="text"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bairro">* Bairro</label>
+                            <div class="input-group input_" data-th-classappend="${#fields.hasErrors('bairroEndereco')} ? has-error">
+                                <span class="input-group-addon" id="sizing-addon2"><span class="fa fa-map-marker"></span></span>
+                                <input autocomplete="off" id="bairro" type="text" data-th-field="*{bairroEndereco}" class="form-control"  aria-describedby="sizing-addon2" required/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cidade">* Cidade</label>
+                            <div class="input-group input_" data-th-classappend="${#fields.hasErrors('cidadeEndereco')} ? has-error">
+                                <span class="input-group-addon" id="sizing-addon2"><span class="fa fa-map-marker"></span></span>
+                                <input autocomplete="off" id="cidade" type="text" data-th-field="*{cidadeEndereco}" class="form-control"  aria-describedby="sizing-addon2" required/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="uf">* Estado</label>
+                            <div class="input-group input_"  data-th-classappend="${#fields.hasErrors('estadoEndereco')} ? has-error">
+                                <span class="input-group-addon" id="sizing-addon2"><span class="fa fa-map-marker"></span></span>
+                                <select class="form-control" data-th-field="*{estadoEndereco}" id="uf">
+                                    <option value="">Escolha</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="button button-raised button-primary button-pill botaoC">Salvar</button>
+                        <br />
+                        <p class="textCampo text-right">* Campos obrigatórios</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <script data-th-src="@{/js/mascara.js}" src="../../static/js/login.js" type="text/javascript"></script>
+    </body>
+</html>

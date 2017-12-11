@@ -1,0 +1,23 @@
+.cadastrar {
+    margin: auto;
+    display: block;
+    width: 50%;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-bottom: 15%;
+}
+
+img.avatar {
+    width: 50%;
+    border-radius: 50%;
+}
+
+.botaoL{
+    display: block;
+    margin: auto;
+}
+

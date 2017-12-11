@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html layout:decorate="~{backoffice/geral/sidemenu}">
+    <head>
+        <title>Detalhes Pedido</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/css/estiloBackofficeDetalhePedido.css}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <section layout:fragment="conteudo" class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 descricao">
+              <form class="" th:object="${pedido}" th:action="@{/backoffice/pedido/salvarStatus}" method="post">
+                <div class="">
+                  <h4 for="">Códido Pedido: <span th:text="${pedido.protocoloPedido}"></span></h4>
+                  <input type="hidden" th:field="*{codigoPedido}">
+                </div>
+
+                <div class="">
+                  <h4 for="">Data Pedido: <span th:text="${#calendars.format(pedido.dataPedido,'dd/MM/yyyy HH:mm:ss')}"></span></h4>
+                </div>
+
+                <div class="">
+                  <h4 for="">Valor Pedido: <span th:text="${#numbers.formatCurrency(pedido.valorPedido)}"></span></h4>
+                </div>
+
+                <div class="">
+                  <h3 for="">Status Pedido</h3>
+                  <select class="" th:field="*{statusPedido}" name="">
+                    <option value="Aguardando Pagamento">Aguardando Pagamento</option>
+                    <option value="Pagamento Autorizado">Pagamento Autorizado</option>
+                    <option value="Em Transporte">Em Transporte</option>
+                    <option value="Entregue">Entregue</option>
+                  </select>
+                </div>
+
+                <div class="">
+                  <h4 for="">Ultima Atualização: <span th:text="${#calendars.format(pedido.ultimaAtualizacao,'dd/MM/yyyy HH:mm:ss')}"></span></h4>
+                </div>
+
+                <div class="">
+                  <h3>Produtos</h3>
+                  <div th:each="prod : ${produtos}">
+                    <p th:text="${prod.tituloProduto}"></p>
+                    <p th:text="${prod.precoProduto}"></p>
+                  </div>
+                </div>
+
+                <button type="submit" name="button">Salvar</button>
+
+              </form>
+
+            </div>
+          </div>
+        </section>
+    </body>
+</html>

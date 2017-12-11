@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div th:fragment="meu_historico">
+
+            <div class="panel panel-default">
+                <div class="panel-body painel-descricao">
+                    Menu Histórico
+                </div>
+
+                <div class="panel-footer painel-descricao2">
+                    <div th:if="${vazio} == true">
+                        <h4>Você não tem nenhum pedido</h4>
+                    </div>
+                    <div th:if="${vazio} == false">
+                        <div data-th-each="pedido : ${pedidos}"  data-th-if="${pedido.statusPedido} == Entregue">         
+                            <div class="blog-card">
+                                <div class="photo photo1">
+                                    <img class="img-responsive" style="height: 100%" data-th-src="@{/images/carrinho.png}" />
+                                </div>
+                                <div class="description">
+                                    <h5><strong>Protocolo:</strong></h5>
+                                    <h5 data-th-text="${pedido.protocoloPedido}"></h5>
+                                    <h5><strong>Valor:</strong></h5>
+                                    <h5 data-th-text="${#numbers.formatCurrency(pedido.valorPedido)}"></h5>
+                                    <h5><strong>Status:</strong></h5>
+                                    <h5 data-th-text="${pedido.statusPedido}"></h5>
+                                    <a role="button" data-toggle="collapse" th:href="'#' + ${pedido.codigoPedido}" aria-expanded="false" aria-controls="collapseExample" class="button button-primary button-circle button-small">!</a>
+
+                                </div>
+                            </div>       
+                            <div class="collapse" th:id="${pedido.codigoPedido}">
+                                <div class="well">
+                                    <ul class="list-group">
+                                        <li class="list-group-item active" >Data da Compra: <span data-th-text="${pedido.dataPedido}"></span></li>
+                                        <li class="list-group-item list-group-item-info">Forma de Pagamento: <span data-th-text="${pedido.formaPagamentoPedido}"></span></li>
+                                        <li class="list-group-item list-group-item-info">Ultima Atualização Sobre o Pedido: <span data-th-text="${pedido.ultimaAtualizacao}"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>                     
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

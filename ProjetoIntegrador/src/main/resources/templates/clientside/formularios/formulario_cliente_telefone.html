@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <section th:fragment="formulario">
+
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+
+                    <form method="post" th:action="@{/novoCliente/telefone}" th:object="${telefone}" novalidate>
+
+                        <input type="hidden" th:field="*{codigoTelefone}">
+
+                        <label for="basic-url">Telefone fixo:</label>
+                        <div class="input-group input_">
+                            <div class="telefone_1 col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <div class="input-group" data-th-classappend="${#fields.hasErrors('dddTelefone')} ? has-error">
+                                    <span class="input-group-addon" id="sizing-addon2">DDD</span>
+                                    <input data-th-field="*{dddTelefone}" type="text" class="form-control"  aria-describedby="sizing-addon2">
+                                </div>
+                            </div>
+                            <div class="telefone_2 col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                <div class="input-group" data-th-classappend="${#fields.hasErrors('numeroTelefone')} ? has-error">
+                                    <span class="input-group-addon" id="sizing-addon2"><span class="fa fa-phone"></span></span>
+                                    <input data-th-field="*{numeroTelefone}" type="text" onkeypress="mascara(this, '####=####')" maxlength="10" class="form-control"  aria-describedby="sizing-addon2">
+                                </div>
+                            </div>
+                        </div>
+                        <label for="basic-url">Telefone celular:</label>
+                        <div class="input-group input_">
+                            <div class="telefone_1 col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <div class="input-group" data-th-classappend="${#fields.hasErrors('dddCelular')} ? has-error">
+                                    <span class="input-group-addon" id="sizing-addon2">DDD</span>
+                                    <input data-th-field="*{dddCelular}"  type="text" class="form-control"  aria-describedby="sizing-addon2">
+                                </div>
+                            </div>
+                            <div class="telefone_2 col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                <div class="input-group" data-th-classappend="${#fields.hasErrors('numeroCelular')} ? has-error">
+                                    <span class="input-group-addon" id="sizing-addon2"><span class="fa fa-phone"></span></span>
+                                    <input data-th-field="*{numeroCelular}" type="text" onkeypress="mascara(this, '#####-####')" maxlength="10" class="form-control"  aria-describedby="sizing-addon2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="button button-raised button-primary button-pill botaoC">Salvar</button>
+                        <br />
+                        <p class="textCampo text-right">* Campos obrigatórios</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <script data-th-src="@{/js/mascara.js}" src="../../static/js/login.js" type="text/javascript"></script>
+    </body>
+</html>

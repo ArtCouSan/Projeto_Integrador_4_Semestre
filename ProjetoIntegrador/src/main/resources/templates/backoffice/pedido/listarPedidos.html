@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html layout:decorate="~{backoffice/geral/sidemenu}">
+    <head>
+        <title>Pedidos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/css/estiloBackofficeProduto.css}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <section layout:fragment="conteudo" class="container-fluid">
+
+            <div class="row grade-produtos">
+                <table class="col-xs-12 col-sm-12 col-md-8 col-lg-8 table table-hover produtos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Data</th>
+                            <th>Valor</th>
+                            <th>Status</th>
+                            <th>Ultima Atualização</th>
+                            <th>Detalhes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="p:${pedidos}">
+                            <td th:text="${p.codigoPedido}"></td>
+                            <td th:text="${#calendars.format(p.dataPedido,'dd/MM/yyyy HH:mm:ss')}"></td>
+                            <td th:text="${#numbers.formatCurrency(p.valorPedido)}"></td>
+                            <td th:text="${p.statusPedido}"></td>
+                            <td th:text="${#calendars.format(p.ultimaAtualizacao,'dd/MM/yyyy HH:mm:ss')}"></td>
+                            <td><form th:action="@{/backoffice/pedido/detalhe/{id} (id=${p.codigoPedido})}" method="post">
+                                    <button class="btn btn-default" type="submit" name="button">Detalhes</button>
+                                </form></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </body>
+</html>

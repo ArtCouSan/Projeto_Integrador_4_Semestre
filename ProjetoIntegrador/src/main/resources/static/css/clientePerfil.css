@@ -1,0 +1,69 @@
+
+.vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    color: white;
+}
+
+.blog-card {
+    text-align: center;
+}
+
+.painel-descricao{
+    color: #31708f;
+    background-color: #d9edf7;
+}
+
+.painel-descricao2{
+    background-color: white;
+}
+
+#Meus_Dados{
+    display: block;
+}
+
+#Meus_Pedidos{
+    display: none;
+}
+
+#Meu_Historico{
+    display: none;
+}
+
+
+#Menu_Desktop{
+    display: none;
+}
+
+#Menu_Mobile{
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+
+    #Menu_Desktop{
+        display: block;
+    }
+
+    #Menu_Mobile{
+        display: none;
+    }
+
+}
+
+.botaoE{
+    display: block;
+    margin: auto;
+    width: 80%;
+}

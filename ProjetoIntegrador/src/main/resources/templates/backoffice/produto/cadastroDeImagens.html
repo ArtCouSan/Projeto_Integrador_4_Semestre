@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html layout:decorate="~{backoffice/geral/sidemenu}">
+    <head>
+        <title>Cadastro de Imagens</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/estiloBackofficeUploadImagem.css}">
+        <script th:src="@{/js/domUploadImagem.js}" type="text/javascript"></script>
+    </head>
+    <body>
+        <section layout:fragment="conteudo" class="container-fluid">
+
+
+            <div class="alert alert-success" th:if="${mensagem != null}">
+                <h2 th:text="${mensagem}"></h2>
+            </div>
+            <div class="alert alert-danger" th:if="${mensagemErro != null}">
+                <h2 th:text="${mensagemErro}"></h2>
+            </div>
+            <div class="row">
+              <h1 class="text-center">Upload de arquivo</h1>
+                <form id="formulario-upload" class="col-xs-12 col-sm-12 col-md-8 col-lg-6" th:action="@{/upload}" th:object="${imagem}" method="post" enctype="multipart/form-data">
+
+                  <input type="hidden" th:id="idProduto" th:name="idProduto" th:value="${codigo}">
+
+                  <input id="titulo" th:field="*{nomeImagem}" type="hidden" name="" value="">
+
+                    <div class="form-group">
+                      <input id="input-imagem" type="file" name="arquivo"/>
+                    </div>
+
+                    <div class="form-group" th:classappend="${#fields.hasErrors('legendaImagem')} ? has-error">
+                      <label for="descricao-imagem">Descrição</label>
+                      <textarea id="descricao-imagem" class="form-control" th:field="*{legendaImagem}" name="legenda" rows="8" cols="80"></textarea>
+                    </div>
+
+                    <div class="form-group" th:classappend="${#fields.hasErrors('sequenciaImagem')} ? has-error">
+                      <label for="seq-imagem">Sequência da Imagem</label>
+                      <input id="seq-imagem" type="number" th:field="*{sequenciaImagem}" name="" value="">
+                    </div>
+
+                    <div class="form-group">
+                      <button class="btn btn-success" type="submit">Enviar arquivo</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

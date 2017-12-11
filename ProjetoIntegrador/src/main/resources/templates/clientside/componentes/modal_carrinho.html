@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div th:fragment="modal_carrinho">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Carrinho</h4>
+            </div>
+            <div class="modal-body">
+                <div th:if="${vazio} == true">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                            <h1 class="vazio text-center">Seu carrinho está vazio!</h1>
+                        </div>
+                    </div>
+                </div>
+                <div th:each="produto :  ${@sessionController.carrinho}">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 col-md-5 col-lg-5 colNomeProduto">
+                            <h4 data-th-text="${produto.tituloProduto}"><strong></strong></h4>
+                        </div>
+                        <div class="col-xs-12 col-sm-7 col-md-6 col-lg-6">
+                            <div class="col-xs-4 col-sm-9 col-md-9 col-lg-9 colPreco">
+                                <h6 data-th-text="${#numbers.formatCurrency(produto.precoProduto)}"><strong> <span class="text-muted">x</span></strong></h6>
+                                <input type="hidden" data-th-value="${produto.precoProduto}">
+                            </div>
+                            <form action="#" th:action="@{/sessao/remover/{id}(id=${produto.codigoProduto})}" method="post">
+                                <div class="col-xs-7 col-sm-2 col-md-2 col-lg-2 colQnt">
+                                    <input type="text" class="form-control input-sm" name="qnt" th:value="${produto.qntCarrinho}">
+                                </div>
+                                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 ">
+
+                                    <input type="hidden" name="id" th:value="${produto.codigoProduto}" />
+                                    <button type="submit" class="btn btn-link btn-xs btnRemover">
+                                        <span class="glyphicon glyphicon-remove"> </span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a th:href="@{/sessao/checkoutEndereco}"><button type="button" class="btn btn-success btn-block btnComprar">Comprar</button></a>   
+            </div>
+        </div>
+    </body>
+</html>

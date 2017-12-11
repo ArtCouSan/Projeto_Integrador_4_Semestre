@@ -1,0 +1,206 @@
+body, html{
+    padding: 0%;
+    margin: 0%;
+    height: 100%;
+}
+
+.descricaoC{
+    max-width: 150ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tituloCard{
+    padding-top: 2%;
+}
+
+a:link{
+    text-decoration:none;
+    color: #000;
+}
+
+.container_p{
+    padding: 0;
+    margin: 0px;
+}
+
+.titulo{
+    position: relative;
+    margin-top: 1%;
+    font-size: 100%;
+    margin-left: 5%;
+    margin-bottom: 1%;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    display: inline-block;
+}
+
+.icone_carrinho_Topo{
+    position: absolute;
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 150%;
+    right: 10%;
+    top: 10%;
+    margin-right: 5%;
+}
+
+.icone_logout, .icone_login{
+    position: absolute;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 150%;
+    right: 5%;
+    top: 10%;
+    margin-right: 0%;
+}
+
+.icone_usuario{
+    background: transparent;
+    border: none;
+    position: absolute;
+    color: white;
+    font-size: 150%;
+    right: 15%;
+    top: 10%;
+}
+
+.menu_lateral{
+    background: #cccccc;
+    color: #000;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.slide_config{
+    margin-top: 2%;
+    margin-bottom: 5px;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+
+#footer{
+    margin-top: 2px;
+}
+
+.recomendacao_texto{
+    font-family: 'Julius Sans One', sans-serif;
+    margin-top: 5%;;
+    margin-bottom: 5%;
+    font-size: 200%;
+}
+
+#descricao{
+    display: none;
+}
+
+.indisponivel {
+    color: red;
+}
+
+.quantity-remove, .quantity-add {
+    cursor: pointer;
+}
+.quantity-add.glyphicon, .quantity-remove.glyphicon {
+    display: block;
+    cursor: pointer;
+}
+
+.menu_topo{
+    z-index: 8;
+    margin-bottom: 4%;
+    background: #cccccc;
+}
+
+.menu{
+    font-family: 'Quicksand', sans-serif;
+    color: #0f0f0f;
+    margin-top: 2%;
+    position: relative;
+}
+
+.carousel_painel{
+    margin-bottom: 4%;
+}
+
+
+.botoes{
+    float: right;
+    margin: 2%;
+}
+
+.botao_descricao{
+    position: absolute;
+    top: 2%;
+}
+
+@media screen and (min-width: 768px) {
+
+    .icone_logout, .icone_login{
+        position: absolute;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 250%;
+        right: 5%;
+        top: 10%;
+        margin-right: 0%;
+    }
+
+    .icone_carrinho_Topo{
+        position: absolute;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 250%;
+        right: 10%;
+        top: 10%;
+        margin-right: 0%;
+    }
+
+    .icone_usuario{
+        background: transparent;
+        border: none;
+        position: absolute;
+        color: white;
+        font-size: 250%;
+        right: 15%;
+        top: 10%;
+    }
+
+    .botoes{
+        margin: 2%;
+    }
+
+    .menu_topo{
+        position: relative;
+        margin-bottom: 4%;
+        background: #cccccc;
+    }
+
+
+    #descricao{
+        display: block;
+    }
+
+    .titulo{
+        position: relative;
+        margin-top: 1%;
+        font-size: 250%;
+        margin-left: 5%;
+        font-family: 'Quicksand', sans-serif;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .recomendacao_texto{
+        font-family: 'Julius Sans One', sans-serif;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        font-size: 450%;
+    }
+
+}

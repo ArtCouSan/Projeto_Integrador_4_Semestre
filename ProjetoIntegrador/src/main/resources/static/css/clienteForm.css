@@ -1,0 +1,138 @@
+.input_{
+    margin-bottom: 2%;
+}
+
+
+.buying-selling {
+    width: 130px; 
+    padding: 10px;
+    position: relative;
+}
+
+.buying-selling-word {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 22px;
+}
+
+.radio-dot:before, .radio-dot:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #fff;
+    border-radius: 100%;
+}
+
+.radio-dot:before {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    top: 10px;
+    left: 16px;
+}
+
+.radio-dot:after {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    top: 14px;
+    left: 20px;
+}
+
+.buying-selling.active .buying-selling-word {
+    color: #fff;
+}
+
+.buying-selling.active .radio-dot:after {
+    background: #030303;
+}
+
+.buying-selling.active .radio-dot:before {
+    background: #fff;
+    border-color: #699D17;
+}
+
+.buying-selling:hover .radio-dot:before {
+    border-color: #adadad;
+}
+
+.buying-selling.active:hover .radio-dot:before {
+    border-color: #adadad;
+}
+
+
+.buying-selling.active .radio-dot:after {
+    background: #adadad;
+}
+
+.buying-selling:hover .radio-dot:after {
+    background: #adadad;
+}
+
+.buying-selling.active:hover .radio-dot:after {
+    background: #adadad;
+
+}
+
+@media (max-width: 400px) {
+
+    .mobile-br {
+        display: none;   
+    }
+
+    .buying-selling {
+        width: 49%;
+        padding: 10px;
+        position: relative;
+    }
+
+}
+
+.telefone_1{
+    padding-left: 0%;
+    margin-bottom: 2%;
+}
+
+.telefone_2{
+    padding-left: 0%;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .telefone_1{
+        padding-left: 0%;
+    }
+
+}
+
+.selecao_tipo{
+    margin: auto;
+    padding-bottom: 2%;
+    display: block;
+}
+
+.mostrarForm{
+    display: block;
+}
+
+.esconderForm{
+    display: none;
+}
+
+.textCampo{
+    margin: 2%;
+    color: firebrick;
+    font-weight: bold;
+}
+
+.botaoC{
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+.formulario{
+    display: block;
+    margin: auto;
+}

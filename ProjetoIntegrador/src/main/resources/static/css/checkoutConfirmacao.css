@@ -1,0 +1,112 @@
+.h1Selecione {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.linhaSelecione {
+    margin-top: 5%;
+}
+
+.colSelecione {
+    background-color: hsl(0, 0%, 91%);
+}
+
+.colEndereco {
+    text-align: center;
+}
+
+.colPagamento {
+    text-align: center;
+}
+
+.corpo {
+    margin-top: 5%;
+}
+
+.panel {
+    border: none;
+}
+
+.panel-body {
+    border: none;
+}
+
+.panel-heading {
+    border: none;
+    background-color: hsl(0, 0%, 100%)!important;
+}
+
+.panel-footer {
+    border: none;
+    background-color: hsl(0, 0%, 100%)!important;
+}
+
+.hs {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.titulos {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+    margin-bottom: 2%;
+}
+
+.confirmar {
+    width: 50%;
+    float: right;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.alterar {
+    width: 30%;
+    padding-top: 2%;
+    margin: auto;
+    display: block;
+}
+
+.linhaProdutos {
+    margin-top: 5%;
+}
+
+.colTotal {
+    text-align: right;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.panel-footer{
+    border: none;
+}
+
+@media (max-width: 760px) {
+    .confirmar {
+        width: 100%;
+        margin: auto;
+        display: block;
+    }
+
+    .panel-heading {
+        text-align: center;
+    }
+    
+    .panel-body {
+        text-align: center;
+    }
+    
+    .titulos {
+        margin-top: 10%;
+    }
+    
+    .colTotal {
+        text-align: center;
+        margin-top: 10%;
+    }
+    
+}
