@@ -15,7 +15,7 @@
 <h3 align="center">Imagem da Home em Desktop </h3>
 <p align="center"><img src="/ProjetoIntegrador/PI4/home_desktop.png"></p>
 <h3 align="center">Imagem da Home em Mobile </h3>
-<p align="center">![Home Mobile](https://raw.github.com/ArtCouSan/Projeto_Integrador_4_Semestre/blob/master/ProjetoIntegrador/PI4/home_mobile.png)</p>
+<p align="center">![HomeMobile](https://raw.github.com/ArtCouSan/Projeto_Integrador_4_Semestre/blob/master/ProjetoIntegrador/PI4/home_mobile.png)</p>
 <h3 align="center">Imagem da Home com produtos em Desktop </h3>
 <p align="center"><img src="/ProjetoIntegrador/PI4/produtos_desktop.png"></p>
 <h3 align="center">Imagem da Home com produtos em Mobile </h3>
