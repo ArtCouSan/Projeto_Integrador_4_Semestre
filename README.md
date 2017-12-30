@@ -12,17 +12,17 @@
 
 # Screens
 
-<h3 class="align-center">Imagem da Home em Desktop </h3>
+<h3 align="center">Imagem da Home em Desktop </h3>
 <p align="center"><img src="/ProjetoIntegrador/PI 4/home_desktop.png"></p>
-<h3 class="align-center">Imagem da Home em Mobile </h3>
+<h3 align="center">Imagem da Home em Mobile </h3>
 <p align="center"><img  src="/ProjetoIntegrador/PI 4/home_mobile.png"></p>
-<h3 class="align-center">Imagem da Home com produtos em Desktop </h3>
+<h3 align="center">Imagem da Home com produtos em Desktop </h3>
 <p align="center"><img src="/ProjetoIntegrador/PI 4/Nova pasta/produtos_desktop.png"></p>
-<h3 class="align-center">Imagem da Home com produtos em Mobile </h3>
+<h3 align="center">Imagem da Home com produtos em Mobile </h3>
 <p align="center"><img  src="/ProjetoIntegrador/PI 4/Nova pasta/produtos_mobile.png"></p>
-<h3 class="align-center">Imagem do Carrinho com produtos em Desktop </h3>
+<h3 align="center">Imagem do Carrinho com produtos em Desktop </h3>
 <p align="center"><img src="/ProjetoIntegrador/PI 4/Nova pasta/carrinho_desktop.png"></p>
-<h3 class="align-center">Imagem do Carrinho com produtos em Mobile</h3>
+<h3 align="center">Imagem do Carrinho com produtos em Mobile</h3>
 <p align="center"><img src="/ProjetoIntegrador/PI 4/Nova pasta/carrinho_mobile.png"></p>
 
 # Autores
