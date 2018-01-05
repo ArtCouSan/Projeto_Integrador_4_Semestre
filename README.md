@@ -7,7 +7,7 @@
 - Linguagem: JAVA WEB
 - Banco de Dados: MySQL
 - IDE: Netbeans 8.2
-- Framework utilizado para server: Spring MVC 1.5.7 e Thymeleaf 3.0.7
+- Framework utilizado para server: Spring Framework 1.5.7, Thymeleaf 3.0.7, Hibernate 5.2.11
 - Framework para front end: JQuery 3.2.1, Bootstrap 3.3.7, Font Awesome 4.7, Unicorn UI 2.0
 
 # Screens
